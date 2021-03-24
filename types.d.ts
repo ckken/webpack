@@ -312,11 +312,6 @@ declare interface AssetResourceGeneratorOptions {
 	 * Specifies the filename template of output files on disk. You must **not** specify an absolute path here, but the path may contain folders separated by '/'! The specified path is joined with the value of the 'output.path' option to determine the location on disk.
 	 */
 	filename?: string | ((pathData: PathData, assetInfo?: AssetInfo) => string);
-
-	/**
-	 * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
-	 */
-	publicPath?: string | ((pathData: PathData, assetInfo?: AssetInfo) => string);
 }
 declare abstract class AsyncDependenciesBlock extends DependenciesBlock {
 	groupOptions: RawChunkGroupOptions & { name?: string } & {
@@ -7393,7 +7388,7 @@ declare interface Output {
 	pathinfo?: boolean | "verbose";
 
 	/**
-	 * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
+	 * The `publicPath` specifies the public URL address of the output files when referenced in a browser.
 	 */
 	publicPath?: string | ((pathData: PathData, assetInfo?: AssetInfo) => string);
 
@@ -7655,7 +7650,7 @@ declare interface OutputNormalized {
 	pathinfo?: boolean | "verbose";
 
 	/**
-	 * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
+	 * The `publicPath` specifies the public URL address of the output files when referenced in a browser.
 	 */
 	publicPath?: string | ((pathData: PathData, assetInfo?: AssetInfo) => string);
 

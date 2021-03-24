@@ -538,13 +538,10 @@ export type Path = string;
  */
 export type Pathinfo = "verbose" | boolean;
 /**
- * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
+ * The `publicPath` specifies the public URL address of the output files when referenced in a browser.
  */
-export type PublicPath = "auto" | RawPublicPath;
-/**
- * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
- */
-export type RawPublicPath =
+export type PublicPath =
+	| "auto"
 	| string
 	| ((
 			pathData: import("../lib/Compilation").PathData,
@@ -2018,7 +2015,7 @@ export interface Output {
 	 */
 	pathinfo?: Pathinfo;
 	/**
-	 * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
+	 * The `publicPath` specifies the public URL address of the output files when referenced in a browser.
 	 */
 	publicPath?: PublicPath;
 	/**
@@ -2595,10 +2592,6 @@ export interface AssetResourceGeneratorOptions {
 	 * Specifies the filename template of output files on disk. You must **not** specify an absolute path here, but the path may contain folders separated by '/'! The specified path is joined with the value of the 'output.path' option to determine the location on disk.
 	 */
 	filename?: FilenameTemplate;
-	/**
-	 * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
-	 */
-	publicPath?: RawPublicPath;
 }
 /**
  * No generator options are supported for this module type.
@@ -2963,7 +2956,7 @@ export interface OutputNormalized {
 	 */
 	pathinfo?: Pathinfo;
 	/**
-	 * The 'publicPath' specifies the public URL address of the output files when referenced in a browser.
+	 * The `publicPath` specifies the public URL address of the output files when referenced in a browser.
 	 */
 	publicPath?: PublicPath;
 	/**
